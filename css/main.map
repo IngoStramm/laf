@@ -1,0 +1,30 @@
+{
+	"version": 3,
+	"file": "../sass/main.css",
+	"sources": [
+		"../sass/main.scss",
+		"../sass/base/_base.scss",
+		"../sass/base/_vars.scss",
+		"../sass/base/_mixins.scss",
+		"../sass/layout/_layout.scss",
+		"../sass/layout/_body.scss",
+		"../sass/layout/_header.scss",
+		"../sass/layout/_footer.scss",
+		"../sass/layout/_ul.scss",
+		"../sass/module/_module.scss"
+	],
+	"sourcesContent": [
+		"@import \"base/_base.scss\";\r\n@import \"layout/_layout.scss\";\r\n@import \"module/_module.scss\";",
+		"@import \"_vars.scss\";\r\n@import \"_mixins.scss\";",
+		"﻿$img-dir: '../images/';\r\n$primary: #1f644c;\r\n$primary-hover: #2B8062;\r\n",
+		"/* Background Image */\r\n@mixin bg-img($f, $r: repeat, $p-v: center, $p-h: center, $c: transparent ) {\r\n\tbackground: $c url(#{$img-dir}#{$f}) $p-v $p-h $r;\r\n}\r\n\r\n@mixin bg-size($a) {\r\n\t-webkit-background-size: #{$a};\r\n\tbackground-size: #{$a};\r\n}\r\n\r\n/* Fontes */\r\n\r\n/* Advent Pro */\r\n@mixin advent-pro {\r\n\tfont-family: 'Advent Pro', sans-serif;\r\n}\r\n\r\n/* PT Sans */\r\n@mixin pt-sans {\r\n\tfont-family: 'PT Sans', sans-serif;\r\n}\r\n\r\n/* Font weigth */\r\n@mixin fa($w: 'normal') {\r\n\t@if $w == 'thin' {\r\n\t\t$w: 100;\r\n\t} @else if $w == 'extra-light' {\r\n\t\t$w: 200;\r\n\t} @else if $w == 'light' {\r\n\t\t$w: 300;\r\n\t} @else if $w == 'normal' {\r\n\t\t$w: 400;\r\n\t} @else if $w == 'normal-italic' {\r\n\t\t$w: \"400 italic\";\r\n\t} @else if $w == 'medium' {\r\n\t\t$w: 500;\r\n\t} @else if $w == 'semi-bold' {\r\n\t\t$w: 600;\r\n\t} @else if $w == 'bold' {\r\n\t\t$w: 700;\r\n\t} @else if $w == 'bold-italic' {\r\n\t\t$w: \"700 italic\";\r\n\t}\r\n\tfont-weight: #{$w};\r\n}\r\n\r\n\r\n/* generic transition */\r\n@mixin transition($transition) {\r\n\t-webkit-transition: $transition;\r\n\t-moz-transition: $transition;\r\n\t-o-transition: $transition;\r\n\ttransition: $transition;\r\n}\r\n\r\n/* all */\r\n@mixin trans-all($duration) {\r\n\t@include transition(all #{$duration}s)\r\n}\r\n\r\n/* background-color */\r\n@mixin trans-bgc($duration) {\r\n\t@include transition(background-color #{$duration}s)\r\n}\r\n\r\n/* opacity */\r\n@mixin trans-opc($duration) {\r\n\t@include transition(opacity #{$duration}s)\r\n}\r\n\r\n/* scale */\r\n@mixin trans-scale($duration) {\r\n\t@include transition(scale #{$duration}s)\r\n}\r\n\r\n/* scale */\r\n@mixin trans-margin($duration) {\r\n\t@include transition(margin #{$duration}s)\r\n}\r\n\r\n/* generic transform */\r\n@mixin transform($transforms) {\r\n\t   -moz-transform: $transforms;\r\n\t     -o-transform: $transforms;\r\n\t    -ms-transform: $transforms;\r\n\t-webkit-transform: $transforms;\r\n          transform: $transforms;\r\n}\r\n/* rotate */\r\n@mixin rotate ($deg) {\r\n\t@include transform(rotate(#{$deg}deg));\r\n}\r\n \r\n/* scale */\r\n@mixin scale($scale) {\r\n\t@include transform(scale(#{$scale}));\r\n} \r\n\r\n/* Border-radius */\r\n@mixin radius($a,$b: '') {\r\n\t-webkit-border-radius: #{$a} #{$b};\r\n\t-moz-border-radius: #{$a} #{$b};\r\n\tborder-radius: #{$a} #{$b};\r\n}\r\n\r\n@mixin opacity($a) {\r\n\topacity: #{$a}; /* standard: ff gt 1.5, opera, safari */\r\n\t-ms-filter: “alpha(opacity=#{$a})”; /* ie 8 */\r\n\tfilter: alpha(opacity=#{$a}); /* ie lt 7 */\r\n\t-khtml-opacity: #{$a}; /* safari 1.x */\r\n\t-moz-opacity: #{$a}; /* ff lt 1.5, netscape */\r\n}\r\n\r\n/* Hightlight */\r\n@mixin hightlight($a: $primary, $b: #fff) {\r\n\tbackground: $a;\r\n\tcolor: $b;\r\n}",
+		"@import \"_body.scss\";\r\n@import \"_header.scss\";\r\n@import \"_footer.scss\";\r\n@import \"_ul.scss\";",
+		"",
+		"",
+		"",
+		"ul {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tlist-style: none;\r\n}",
+		""
+	],
+	"mappings": "AGAA,sBAAsB;AAUtB,YAAY;AAEZ,gBAAgB;AAKhB,aAAa;AAKb,iBAAiB;AAyBjB,wBAAwB;AAQxB,SAAS;AAKT,sBAAsB;AAKtB,aAAa;AAKb,WAAW;AAKX,WAAW;AAKX,uBAAuB;AAQvB,YAAY;AAKZ,WAAW;AAKX,mBAAmB;AAenB,gBAAgB;;AKjHhB,AAAA,EAAE,CAAC;EACF,MAAM,EAAE,CAAE;EACV,OAAO,EAAE,CAAE;EACX,UAAU,EAAE,IAAK;CACjB",
+	"names": []
+}

@@ -1,0 +1,118 @@
+/* Background Image */
+@mixin bg-img($f, $r: repeat, $p-v: center, $p-h: center, $c: transparent ) {
+	background: $c url(#{$img-dir}#{$f}) $p-v $p-h $r;
+}
+
+@mixin bg-size($a) {
+	-webkit-background-size: #{$a};
+	background-size: #{$a};
+}
+
+/* Fontes */
+
+/* Advent Pro */
+@mixin advent-pro {
+	font-family: 'Advent Pro', sans-serif;
+}
+
+/* PT Sans */
+@mixin pt-sans {
+	font-family: 'PT Sans', sans-serif;
+}
+
+/* Font weigth */
+@mixin fa($w: 'normal') {
+	@if $w == 'thin' {
+		$w: 100;
+	} @else if $w == 'extra-light' {
+		$w: 200;
+	} @else if $w == 'light' {
+		$w: 300;
+	} @else if $w == 'normal' {
+		$w: 400;
+	} @else if $w == 'normal-italic' {
+		$w: "400 italic";
+	} @else if $w == 'medium' {
+		$w: 500;
+	} @else if $w == 'semi-bold' {
+		$w: 600;
+	} @else if $w == 'bold' {
+		$w: 700;
+	} @else if $w == 'bold-italic' {
+		$w: "700 italic";
+	}
+	font-weight: #{$w};
+}
+
+
+/* generic transition */
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+/* all */
+@mixin trans-all($duration) {
+	@include transition(all #{$duration}s)
+}
+
+/* background-color */
+@mixin trans-bgc($duration) {
+	@include transition(background-color #{$duration}s)
+}
+
+/* opacity */
+@mixin trans-opc($duration) {
+	@include transition(opacity #{$duration}s)
+}
+
+/* scale */
+@mixin trans-scale($duration) {
+	@include transition(scale #{$duration}s)
+}
+
+/* scale */
+@mixin trans-margin($duration) {
+	@include transition(margin #{$duration}s)
+}
+
+/* generic transform */
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+/* rotate */
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+ 
+/* scale */
+@mixin scale($scale) {
+	@include transform(scale(#{$scale}));
+} 
+
+/* Border-radius */
+@mixin radius($a,$b: '') {
+	-webkit-border-radius: #{$a} #{$b};
+	-moz-border-radius: #{$a} #{$b};
+	border-radius: #{$a} #{$b};
+}
+
+@mixin opacity($a) {
+	opacity: #{$a}; /* standard: ff gt 1.5, opera, safari */
+	-ms-filter: “alpha(opacity=#{$a})”; /* ie 8 */
+	filter: alpha(opacity=#{$a}); /* ie lt 7 */
+	-khtml-opacity: #{$a}; /* safari 1.x */
+	-moz-opacity: #{$a}; /* ff lt 1.5, netscape */
+}
+
+/* Hightlight */
+@mixin hightlight($a: $primary, $b: #fff) {
+	background: $a;
+	color: $b;
+}

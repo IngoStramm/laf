@@ -1,0 +1,97 @@
+/*
+ Theme Name:   LAF Framework
+ Theme URI:    http://laf.marketing
+ Description:  Framework desenvolvido pela Agência LAF.
+ Author:       Ingo Stramm
+ Author URI:   http://ingostramm.com.br
+ Template:     twentysixteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  laf
+*/
+
+/* Menu */
+
+.main-navigation {
+	position: relative;
+	z-index: 10;
+}
+
+.main-navigation  .menu-item-has-children {
+	position: relative;
+}
+
+	.main-navigation .sub-menu {
+		padding-left: 0;
+		list-style: none;
+		background: #fff;
+		border: #dedede 1px solid;
+	}
+
+		.main-navigation .sub-menu li a {
+			display: block;
+			padding: 10px 15px;
+		}
+
+
+@media (min-width: 768px) {
+
+	/* Menu */
+
+	.header .main-navigation .nav.navbar-nav {
+		width: 100%;
+		float: none;
+	}
+
+		.header .main-navigation li {
+			display: table-cell;
+			width: 1%;
+			float: none;
+			text-align: center;
+		}
+
+	.header .main-navigation .sub-menu {
+		display: block;
+		width: auto;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		white-space: nowrap;
+		float: left;
+	}
+
+		.header .main-navigation .sub-menu li {
+			display: block;
+			width: auto;
+			float: left;
+			text-align: left;
+		}
+
+	.header .main-navigation .sub-menu,
+	.header .main-navigation .menu-item-has-children:hover .sub-menu  .menu-item-has-children .sub-menu {
+		display: none;
+	}
+	
+
+	.header .main-navigation .menu-item-has-children:hover .sub-menu,
+	.header .main-navigation .menu-item-has-children:hover .sub-menu  .menu-item-has-children:hover .sub-menu {
+		display: block;
+	}
+
+		.header .main-navigation .sub-menu .menu-item-has-children {
+			position: relative;
+		}
+
+			.header .main-navigation .sub-menu .menu-item-has-children .sub-menu {
+				top: 0;
+				left: 100%;
+			}
+
+	.header .main-navigation .sub-menu li a {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+}
