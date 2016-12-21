@@ -3,47 +3,11 @@
 	background: $c url(#{$img-dir}#{$f}) $p-v $p-h $r;
 }
 
+/* background-size */
 @mixin bg-size($a) {
 	-webkit-background-size: #{$a};
 	background-size: #{$a};
 }
-
-/* Fontes */
-
-/* Advent Pro */
-@mixin advent-pro {
-	font-family: 'Advent Pro', sans-serif;
-}
-
-/* PT Sans */
-@mixin pt-sans {
-	font-family: 'PT Sans', sans-serif;
-}
-
-/* Font weigth */
-@mixin fa($w: 'normal') {
-	@if $w == 'thin' {
-		$w: 100;
-	} @else if $w == 'extra-light' {
-		$w: 200;
-	} @else if $w == 'light' {
-		$w: 300;
-	} @else if $w == 'normal' {
-		$w: 400;
-	} @else if $w == 'normal-italic' {
-		$w: "400 italic";
-	} @else if $w == 'medium' {
-		$w: 500;
-	} @else if $w == 'semi-bold' {
-		$w: 600;
-	} @else if $w == 'bold' {
-		$w: 700;
-	} @else if $w == 'bold-italic' {
-		$w: "700 italic";
-	}
-	font-weight: #{$w};
-}
-
 
 /* generic transition */
 @mixin transition($transition) {
@@ -51,6 +15,14 @@
 	-moz-transition: $transition;
 	-o-transition: $transition;
 	transition: $transition;
+}
+
+/* generic transition !important */
+@mixin transition-i($transition) {
+	-webkit-transition: $transition !important;
+	-moz-transition: $transition !important;
+	-o-transition: $transition !important;
+	transition: $transition !important;
 }
 
 /* all */
@@ -103,6 +75,7 @@
 	border-radius: #{$a} #{$b};
 }
 
+/* Opacity */
 @mixin opacity($a) {
 	opacity: #{$a}; /* standard: ff gt 1.5, opera, safari */
 	-ms-filter: “alpha(opacity=#{$a})”; /* ie 8 */
@@ -111,8 +84,31 @@
 	-moz-opacity: #{$a}; /* ff lt 1.5, netscape */
 }
 
+/* Opacity !important */
+@mixin opacity-i($a) {
+	opacity: #{$a} !important; /* standard: ff gt 1.5, opera, safari */
+	-ms-filter: “alpha(opacity=#{$a})” !important; /* ie 8 */
+	filter: alpha(opacity=#{$a}) !important; /* ie lt 7 */
+	-khtml-opacity: #{$a} !important; /* safari 1.x */
+	-moz-opacity: #{$a} !important; /* ff lt 1.5, netscape */
+}
+
 /* Hightlight */
 @mixin hightlight($a: $primary, $b: #fff) {
 	background: $a;
 	color: $b;
+}
+
+/* box-sizing */
+@mixin box-sz($b) {
+	-webkit-box-sizing: #{$b};
+	-moz-box-sizing: #{$b};
+	box-sizing: #{$b};
+}
+
+/* box-shadow */
+@mixin box-shadow($h, $v, $blur, $spread, $color) {
+	-webkit-box-shadow: #{$h} #{$v} #{$blur} #{$spread} #{$color};
+	-moz-box-shadow: #{$h} #{$v} #{$blur} #{$spread} #{$color};
+	box-shadow: #{$h} #{$v} #{$blur} #{$spread} #{$color};
 }

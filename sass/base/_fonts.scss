@@ -1,0 +1,78 @@
+/* Fontes */
+
+/* Roboto */
+@mixin roboto {
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Font weigth */
+@mixin fw($w: 'normal') {
+	@if $w == 'thin' {
+		$w: 100;
+	} @else if $w == 'extra-light' {
+		$w: 200;
+	} @else if $w == 'light' {
+		$w: 300;
+	} @else if $w == 'normal' {
+		$w: 400;
+	} @else if $w == 'normal-italic' {
+		$w: "400i";
+	} @else if $w == 'medium' {
+		$w: 500;
+	} @else if $w == 'semi-bold' {
+		$w: 600;
+	} @else if $w == 'bold' {
+		$w: 700;
+	} @else if $w == 'bold-italic' {
+		$w: "700 italic";
+	}
+	font-weight: #{$w};
+}
+
+/* Gotham Bold */
+
+@font-face {
+	font-family: 'gothambold1';
+	src: url('#{$fonts-dir}/gothambold1/gothambold1.eot');
+	src: local('gothambold1'), url('#{$fonts-dir}/gothambold1/gothambold1.woff') format('woff'), url('#{$fonts-dir}/gothambold1/gothambold1.ttf') format('truetype');
+}
+
+@mixin gotham-bold {
+	font-family: 'gothambold1';
+}
+
+/* Gotham Book */
+
+@font-face {
+	font-family: 'GothamBook';
+	src: url('#{$fonts-dir}/GothamBook/GothamBook.eot');
+	src: local('GothamBook'), url('#{$fonts-dir}/GothamBook/GothamBook.woff') format('woff'), url('#{$fonts-dir}/GothamBook/GothamBook.ttf') format('truetype');
+}
+
+@mixin gotham-book {
+	font-family: 'GothamBook';
+}
+
+/* GothamLight */
+
+@font-face {
+	font-family: 'GothamLight';
+	src: url('#{$fonts-dir}/GothamLight/GothamLight.eot');
+	src: local('GothamLight'), url('#{$fonts-dir}/GothamLight/GothamLight.woff') format('woff'), url('#{$fonts-dir}/GothamLight/GothamLight.ttf') format('truetype');
+}
+
+@mixin gotham-light {
+	font-family: 'GothamLight';
+}
+
+/* Gotham-Thin */
+
+@font-face {
+	font-family: 'Gotham-Thin';
+	src: url('#{$fonts-dir}/Gotham-Thin/Gotham-Thin.eot');
+	src: local('Gotham-Thin'), url('#{$fonts-dir}/Gotham-Thin/Gotham-Thin.woff') format('woff'), url('#{$fonts-dir}/Gotham-Thin/Gotham-Thin.ttf') format('truetype');
+}
+
+@mixin gotham-thin {
+	font-family: 'Gotham-Thin';
+}
