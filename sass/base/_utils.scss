@@ -1,0 +1,45 @@
+@for $i from 0 through 50 {
+
+	$valor: $i * 5;
+
+	.m-t-#{$valor} {
+		margin-top: #{$valor}px;
+	}
+
+	.m-t-#{$valor}-i {
+		margin-top: #{$valor}px !important;
+	}
+
+	.m-r-#{$valor} {
+		margin-right: #{$valor}px;
+	}
+
+	.m-r-#{$valor}-i {
+		margin-right: #{$valor}px !important;
+	}
+
+	.m-b-#{$valor} {
+		margin-bottom: #{$valor}px;
+	}
+
+	.m-b-#{$valor}-i {
+		margin-bottom: #{$valor}px !important;
+	}
+
+	.m-l-#{$valor} {
+		margin-left: #{$valor}px;
+	}
+
+	.m-l-#{$valor}-i {
+		margin-left: #{$valor}px !important;
+	}
+
+}
+
+.ov-h {
+	overflow: hidden;
+}
+
+.ov-h-i {
+	overflow: hidden !important;
+}
