@@ -9,6 +9,34 @@ function debug($a) {
 	echo '</pre>';
 }
 
+function google_api() {
+	return 'AIzaSyAvvX8k90IYFDwQKMtsz8xCbmsT11r_cNc';
+}
+
+add_action('wp_head', 'setup_js_api_key');
+
+function setup_js_api_key() {
+	$rua = laf_get_option( 'rua' );
+	$numero = laf_get_option( 'numero' );
+	$complemento = laf_get_option( 'complemento' );
+	$bairro = laf_get_option( 'bairro' );
+	$cidade = laf_get_option( 'cidade' );
+	$uf = laf_get_option( 'uf' );
+	$cep = laf_get_option( 'cep' );
+	$endereco = $rua . ', ' . $numero . ' - ' . $complemento . ' - CEP:' . $cep . ' - ' . $bairro . ' - ' . $cidade . ' - ' . $uf;
+	$site_name = get_bloginfo('name');
+	?>
+	<script>
+		var g_key = "<?php echo google_api(); ?>";
+		var lat = Number("<?php echo laf_get_option('lat'); ?>");
+		var long = Number("<?php echo laf_get_option('long'); ?>");
+		var endereco = "<?php echo $endereco; ?>";
+		var site_name = "<?php echo $site_name; ?>";
+	</script>
+	<?php
+}
+
+
 /**
  * Remove o estilos e scripts do Twenty Sixteen.
  *
